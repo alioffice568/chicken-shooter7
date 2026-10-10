@@ -244,3 +244,45 @@ function adjustBalance(){
 </script>
 </body>
 </html>
+<!-- EasyPaisa Deposit Section -->
+<section style="max-width:450px;margin:25px auto;padding:22px;background:#fff;border-radius:16px;box-shadow:0 4px 18px #0002;font-family:Arial,sans-serif;color:#222;">
+  <h2 style="text-align:center;color:#087b46;">Add Funds</h2>
+  <p style="text-align:center;color:#666;">Deposit via EasyPaisa</p>
+
+  <div style="background:#e9f8ef;padding:15px;border-radius:10px;">
+    <p><strong>Payment Method:</strong> EasyPaisa</p>
+    <p><strong>Account Title:</strong> AYESHA</p>
+    <p><strong>Account Number:</strong> 03283765427</p>
+    <button onclick="navigator.clipboard.writeText('03283765427');this.innerText='Copied!';"
+      style="width:100%;padding:12px;background:#087b46;color:white;border:0;border-radius:8px;">
+      Copy Account Number
+    </button>
+  </div>
+
+  <form id="depositForm" style="margin-top:18px;">
+    <label>Deposit Amount (PKR)</label>
+    <input id="depositAmount" type="number" min="1" required
+      placeholder="Enter amount"
+      style="box-sizing:border-box;width:100%;padding:12px;margin:8px 0 16px;border:1px solid #ccc;border-radius:8px;">
+
+    <label>EasyPaisa Transaction ID</label>
+    <input id="transactionId" type="text" required
+      placeholder="Enter transaction ID"
+      style="box-sizing:border-box;width:100%;padding:12px;margin:8px 0 16px;border:1px solid #ccc;border-radius:8px;">
+
+    <button type="submit"
+      style="width:100%;padding:14px;background:#087b46;color:white;border:0;border-radius:8px;font-size:16px;">
+      Submit Deposit Request
+    </button>
+  </form>
+
+  <p id="depositMessage" style="margin-top:15px;font-size:14px;"></p>
+</section>
+
+<script>
+document.getElementById('depositForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('depositMessage').textContent =
+    'Request form demo only. Your payment has NOT been verified or submitted to the admin. Please contact the panel administrator to verify your payment.';
+});
+</script>
